@@ -4,8 +4,8 @@ namespace HtmxMvc.Services;
 
 public sealed class ContactService
 {
-    private readonly object _gate = new();
-    private readonly List<Contact> _contacts = new();
+    private readonly Lock _gate = new();
+    private readonly List<Contact> _contacts = [];
     private int _nextId = 1;
 
     public ContactService()
