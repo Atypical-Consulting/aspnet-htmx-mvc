@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/HtmxMvc.Application/HtmxMvc.Application.csproj" />
     <Project Path="src/HtmxMvc.Domain/HtmxMvc.Domain.csproj" />
     <Project Path="src/HtmxMvc.Infrastructure/HtmxMvc.Infrastructure.csproj" />
     <Project Path="src/HtmxMvc/HtmxMvc.csproj" />
