@@ -1,7 +1,11 @@
+using HtmxMvc.Application;
+using HtmxMvc.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<HtmxMvc.Services.ContactService>();
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure();
 
 var app = builder.Build();
 
