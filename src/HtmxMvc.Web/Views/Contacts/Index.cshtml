@@ -18,7 +18,7 @@
     <form hx-action="Create"
           hx-target="#contact-rows"
           hx-swap="afterbegin"
-          hx-on::after-request="if(event.detail.successful) this.reset()"
+          hx-on:contact-saved="if(event.detail.action === 'created') this.reset()"
           class="card form-row items-end p-4">
         <div class="field">
             <label>Name</label>

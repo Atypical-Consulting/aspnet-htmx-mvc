@@ -7,5 +7,6 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/HtmxMvc.Application.Tests/HtmxMvc.Application.Tests.csproj" />
+    <Project Path="tests/HtmxMvc.Web.Tests/HtmxMvc.Web.Tests.csproj" />
   </Folder>
 </Solution>

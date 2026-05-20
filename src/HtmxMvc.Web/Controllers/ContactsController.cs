@@ -1,4 +1,5 @@
 using HtmxMvc.Application.Contacts;
+using HtmxMvc.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HtmxMvc.Controllers;
@@ -18,13 +19,19 @@ public sealed class ContactsController(
 
     [HttpGet("/contacts/list")]
     public async Task<IActionResult> List(string? q, CancellationToken ct)
-        => PartialView("_ContactList", await search.ExecuteAsync(q, ct));
+    {
+        var results = await search.ExecuteAsync(q, ct);
+        return Request.IsHtmx()
+            ? PartialView("_ContactList", results)
+            : View("Index", results);
+    }
 
     [HttpPost("/contacts")]
     public async Task<IActionResult> Create(ContactInput input, CancellationToken ct)
     {
         if (!ModelState.IsValid) return BadRequest();
         var created = await add.ExecuteAsync(input, ct);
+        Response.Htmx(h => h.Trigger("contact-saved", new { id = created.Id, action = "created" }));
         return PartialView("_ContactRow", created);
     }
 
@@ -40,7 +47,9 @@ public sealed class ContactsController(
     {
         if (!ModelState.IsValid) return BadRequest();
         var updated = await update.ExecuteAsync(id, input, ct);
-        return updated is null ? NotFound() : PartialView("_ContactRow", updated);
+        if (updated is null) return NotFound();
+        Response.Htmx(h => h.Trigger("contact-saved", new { id = updated.Id, action = "updated" }));
+        return PartialView("_ContactRow", updated);
     }
 
     [HttpGet("/contacts/{id:int}")]
@@ -52,5 +61,9 @@ public sealed class ContactsController(
 
     [HttpDelete("/contacts/{id:int}")]
     public async Task<IActionResult> Delete(int id, CancellationToken ct)
-        => await delete.ExecuteAsync(id, ct) ? Ok() : NotFound();
+    {
+        if (!await delete.ExecuteAsync(id, ct)) return NotFound();
+        Response.Htmx(h => h.Trigger("contact-saved", new { id, action = "deleted" }));
+        return Ok();
+    }
 }
