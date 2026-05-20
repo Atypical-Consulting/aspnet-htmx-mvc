@@ -1,28 +1,21 @@
 @model HtmxMvc.Domain.Contact
-<tr id="contact-@Model.Id" class="border-b border-slate-200 bg-yellow-50">
-    <td colspan="4" class="px-4 py-2">
+<tr id="contact-@Model.Id" class="editing">
+    <td colspan="4">
         <form hx-action="Update"
               hx-route-id="@Model.Id"
               hx-target="#contact-@Model.Id"
               hx-swap="outerHTML"
-              class="flex flex-wrap gap-2 items-center">
-            <input name="Name" value="@Model.Name" required
-                   class="border border-slate-300 rounded px-2 py-1 flex-1 min-w-[10rem]"
-                   placeholder="Name" />
-            <input name="Email" value="@Model.Email"
-                   class="border border-slate-300 rounded px-2 py-1 flex-1 min-w-[10rem]"
-                   placeholder="Email" />
-            <input name="Phone" value="@Model.Phone"
-                   class="border border-slate-300 rounded px-2 py-1 flex-1 min-w-[8rem]"
-                   placeholder="Phone" />
-            <button type="submit"
-                    class="bg-blue-600 hover:bg-blue-700 text-white rounded px-3 py-1">Save</button>
+              class="form-row items-center">
+            <input name="Name" value="@Model.Name" required placeholder="Name" />
+            <input name="Email" value="@Model.Email" placeholder="Email" />
+            <input name="Phone" value="@Model.Phone" placeholder="Phone" />
+            <button type="submit">Save</button>
             <button type="button"
+                    class="secondary"
                     hx-action="Row"
                     hx-route-id="@Model.Id"
                     hx-target="#contact-@Model.Id"
-                    hx-swap="outerHTML"
-                    class="bg-slate-200 hover:bg-slate-300 rounded px-3 py-1">Cancel</button>
+                    hx-swap="outerHTML">Cancel</button>
         </form>
     </td>
 </tr>

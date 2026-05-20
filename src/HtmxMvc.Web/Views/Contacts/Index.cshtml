@@ -5,10 +5,10 @@
 
 <section class="space-y-6">
     <div>
-        <label for="q" class="block text-sm font-medium text-slate-700 mb-1">Search</label>
+        <label for="q">Search</label>
         <input id="q" type="search" name="q"
                placeholder="Type to filter..."
-               class="w-full border border-slate-300 rounded px-3 py-2"
+               class="w-full"
                hx-action="List"
                hx-trigger="keyup changed delay:300ms, search"
                hx-target="#contact-rows"
@@ -19,34 +19,30 @@
           hx-target="#contact-rows"
           hx-swap="afterbegin"
           hx-on::after-request="if(event.detail.successful) this.reset()"
-          class="flex flex-wrap gap-2 items-end bg-white p-4 border border-slate-200 rounded">
-        <div class="flex-1 min-w-[10rem]">
-            <label class="block text-xs text-slate-600 mb-1">Name</label>
-            <input name="Name" required
-                   class="w-full border border-slate-300 rounded px-2 py-1" />
+          class="card form-row items-end p-4">
+        <div class="field">
+            <label>Name</label>
+            <input name="Name" required />
         </div>
-        <div class="flex-1 min-w-[10rem]">
-            <label class="block text-xs text-slate-600 mb-1">Email</label>
-            <input name="Email"
-                   class="w-full border border-slate-300 rounded px-2 py-1" />
+        <div class="field">
+            <label>Email</label>
+            <input name="Email" />
         </div>
-        <div class="flex-1 min-w-[8rem]">
-            <label class="block text-xs text-slate-600 mb-1">Phone</label>
-            <input name="Phone"
-                   class="w-full border border-slate-300 rounded px-2 py-1" />
+        <div class="field">
+            <label>Phone</label>
+            <input name="Phone" />
         </div>
-        <button type="submit"
-                class="bg-blue-600 hover:bg-blue-700 text-white rounded px-4 py-2">Add</button>
+        <button type="submit">Add</button>
     </form>
 
-    <div class="bg-white border border-slate-200 rounded overflow-hidden">
-        <table class="w-full text-left">
-            <thead class="bg-slate-100 text-sm text-slate-700">
+    <div class="card overflow-hidden">
+        <table>
+            <thead>
                 <tr>
-                    <th class="px-4 py-2">Name</th>
-                    <th class="px-4 py-2">Email</th>
-                    <th class="px-4 py-2">Phone</th>
-                    <th class="px-4 py-2 text-right">Actions</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th class="actions">Actions</th>
                 </tr>
             </thead>
             <tbody id="contact-rows">
