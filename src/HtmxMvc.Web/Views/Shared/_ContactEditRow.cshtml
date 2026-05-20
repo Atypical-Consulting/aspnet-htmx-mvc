@@ -1,7 +1,8 @@
 @model HtmxMvc.Domain.Contact
 <tr id="contact-@Model.Id" class="border-b border-slate-200 bg-yellow-50">
     <td colspan="4" class="px-4 py-2">
-        <form hx-put="/contacts/@Model.Id"
+        <form hx-action="Update"
+              hx-route-id="@Model.Id"
               hx-target="#contact-@Model.Id"
               hx-swap="outerHTML"
               class="flex flex-wrap gap-2 items-center">
@@ -17,7 +18,8 @@
             <button type="submit"
                     class="bg-blue-600 hover:bg-blue-700 text-white rounded px-3 py-1">Save</button>
             <button type="button"
-                    hx-get="/contacts/@Model.Id"
+                    hx-action="Row"
+                    hx-route-id="@Model.Id"
                     hx-target="#contact-@Model.Id"
                     hx-swap="outerHTML"
                     class="bg-slate-200 hover:bg-slate-300 rounded px-3 py-1">Cancel</button>

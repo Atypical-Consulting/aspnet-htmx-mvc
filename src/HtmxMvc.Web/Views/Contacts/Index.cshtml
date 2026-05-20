@@ -9,13 +9,13 @@
         <input id="q" type="search" name="q"
                placeholder="Type to filter..."
                class="w-full border border-slate-300 rounded px-3 py-2"
-               hx-get="/contacts/list"
+               hx-action="List"
                hx-trigger="keyup changed delay:300ms, search"
                hx-target="#contact-rows"
                hx-swap="innerHTML" />
     </div>
 
-    <form hx-post="/contacts"
+    <form hx-action="Create"
           hx-target="#contact-rows"
           hx-swap="afterbegin"
           hx-on::after-request="if(event.detail.successful) this.reset()"
