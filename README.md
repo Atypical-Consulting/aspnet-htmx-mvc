@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> **This repository has moved.** The code now lives in **[Atypical-Consulting/htmx-samples](https://github.com/Atypical-Consulting/htmx-samples)** under [`mvc-reference`](https://github.com/Atypical-Consulting/htmx-samples/tree/main/mvc-reference) — full git history preserved. This repository is archived (read-only).
+
 ![aspnet-htmx-mvc banner](.github/banner.png)
 
 # HtmxMvc
