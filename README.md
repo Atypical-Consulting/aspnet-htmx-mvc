@@ -307,6 +307,19 @@ build a `DefaultHttpContext` and assert headers in/out.
 
 ---
 
+<!-- portfolio-techstack:start -->
+
+## Tech Stack
+
+- **.NET 10**
+- Microsoft.EntityFrameworkCore.Sqlite
+- Microsoft.Extensions.DependencyInjection.Abstractions
+- TheAppManager
+- xunit.runner.visualstudio
+- xunit.v3
+
+<!-- portfolio-techstack:end -->
+
 <!-- portfolio-sections:start -->
 
 ## Contributing
