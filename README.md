@@ -1,3 +1,5 @@
+![aspnet-htmx-mvc banner](.github/banner.png)
+
 # HtmxMvc
 
 A reference implementation showing how to build server-rendered ASP.NET Core
