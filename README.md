@@ -15,6 +15,29 @@
 [![Last commit](https://img.shields.io/github/last-commit/Atypical-Consulting/aspnet-htmx-mvc)](https://github.com/Atypical-Consulting/aspnet-htmx-mvc/commits)
 <!-- portfolio-badges:end -->
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [Highlights](#highlights)
+- [Quick start](#quick-start)
+- [Usage](#usage)
+- [Architecture](#architecture)
+- [Module composition](#module-composition)
+- [HTMX integration](#htmx-integration)
+- [Features](#features)
+- [Persistence](#persistence)
+- [Tests](#tests)
+- [Notes](#notes)
+- [Design docs](#design-docs)
+- [Tech Stack](#tech-stack)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+
+<!-- portfolio-toc:end -->
+
+
 
 A reference implementation showing how to build server-rendered ASP.NET Core
 MVC apps with HTMX 2 — **organized by feature, composed by module, persisted
